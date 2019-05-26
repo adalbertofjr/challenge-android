@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import br.com.adalbertofjr.app.R
+import br.com.adalbertofjr.app.componentes.carousel.adapter.CarouselViewPagerAdapter
 import br.com.adalbertofjr.app.model.Banner
 import br.com.adalbertofjr.app.model.Categoria
 import br.com.adalbertofjr.app.model.Produto
@@ -36,12 +37,13 @@ class HomeFragment : Fragment(), HomeContract.View {
         presenter.loadBannersData()
         presenter.loadCategoriasData()
         presenter.loadMaisVendidos()
+
     }
 
     override fun showBanners(banners: List<Banner>) {
         banners.let {
             Timber.d("Banners id: ($banners)")
-            txtDescricao.text = banners.toString()
+            carousel.adapter = CarouselViewPagerAdapter(context!!, banners)
         }
     }
 

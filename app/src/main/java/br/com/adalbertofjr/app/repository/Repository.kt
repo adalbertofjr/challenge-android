@@ -21,8 +21,7 @@ open class Repository : RepositoryContract {
                         "https://images-submarino.b2w.io/spacey/2017/02/03/sub-home-dest-full-655x328-touch-play.png",
                         "https://images-submarino.b2w.io/spacey/2017/02/03/sub-home-dest-full-655x328-touch-play.png"))
 
-        Thread.sleep(5_000) // todo - remover simulação de espera
-
+//        Thread.sleep(3_000)
         return Observable.fromIterable(banners)
     }
 
