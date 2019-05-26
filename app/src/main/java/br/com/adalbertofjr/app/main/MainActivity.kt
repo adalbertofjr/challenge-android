@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import br.com.adalbertofjr.app.R
@@ -12,8 +11,10 @@ import br.com.adalbertofjr.app.home.HomeFragment
 import br.com.adalbertofjr.app.sobre.SobreFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
+import timber.log.Timber
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MainContract.View {
+
     private val drawerToggle: ActionBarDrawerToggle by lazy {
         ActionBarDrawerToggle(
                 this,
@@ -24,11 +25,14 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
+    lateinit var presenter: MainContract.Presenter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
         setDrawerLayout()
+        presenter = MainPresenter(this)
 
         if (savedInstanceState == null) {
             selectMenuOption(navView.menu.findItem(R.id.action_home))
@@ -44,21 +48,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            android.R.id.home -> {
-                drawerLayout.openDrawer(GravityCompat.START)
-                return true
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
     private fun selectMenuOption(menuItem: MenuItem) {
         menuItem.isChecked = true
         drawerLayout.closeDrawers()
-        val title = menuItem.title.toString()
-        var fragment: Fragment? = supportFragmentManager.findFragmentByTag(title)
+        val tag = menuItem.title.toString()
+        var fragment: Fragment? = supportFragmentManager.findFragmentByTag(tag)
 
         when (menuItem.itemId) {
             navView.menu.findItem(R.id.action_home).itemId -> {
@@ -74,20 +68,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         fragment?.let {
-            setFragment(
-                    title,
-                    fragment
-            )
+            presenter.loadFragment(fragment, tag)
         }
     }
 
-    private fun setFragment(title: String, fragment: Fragment) {
+    override fun showSelectedView(fragment: Fragment, tag: String) {
         if (fragment.isVisible) {
+            Timber.d("showSelectedView: (${fragment::class.java.simpleName}) já está visivel")
             return
         }
 
+        Timber.d("showSelectedView: (${fragment::class.java.simpleName})")
+
         supportFragmentManager.beginTransaction()
-                .replace(R.id.content, fragment, title)
+                .replace(R.id.content, fragment, tag)
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .commit()
     }
