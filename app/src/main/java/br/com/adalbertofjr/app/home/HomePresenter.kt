@@ -8,7 +8,16 @@ class HomePresenter(
 ) : HomeContract.Presenter {
 
     override fun loadBannersData() {
-        val bannerItems = repository.getBannerItems()
-        view.let { view.showBanners(bannerItems) }
+        view.let {
+            val bannerItems = repository.getBannerItems()
+            view.showBanners(bannerItems)
+        }
+    }
+
+    override fun loadCategoriasData() {
+        view.let {
+            val categorias = repository.getCategorias()
+            view.showCategorias(categorias)
+        }
     }
 }
