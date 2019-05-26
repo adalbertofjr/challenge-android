@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.adalbertofjr.app.R
 import br.com.adalbertofjr.app.componentes.carousel.adapter.CarouselViewPagerAdapter
+import br.com.adalbertofjr.app.home.adapter.CategoriasAdapter
 import br.com.adalbertofjr.app.model.Banner
 import br.com.adalbertofjr.app.model.Categoria
 import br.com.adalbertofjr.app.model.Produto
@@ -50,6 +53,9 @@ class HomeFragment : Fragment(), HomeContract.View {
     override fun showCategorias(categorias: List<Categoria>) {
         categorias.let {
             Timber.d("Categoria descrição: ($categorias)")
+//            rvCategorias.setHasFixedSize(true)
+            rvCategorias.adapter = CategoriasAdapter(categorias)
+            rvCategorias.layoutManager = LinearLayoutManager(context, LinearLayout.HORIZONTAL, false)
         }
     }
 

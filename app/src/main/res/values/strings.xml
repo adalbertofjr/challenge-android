@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">A Lodjinha</string>
+
+    <string name="titulo_categorias">Categorias</string>
+    <string name="titulo_mais_vendidos">Mais Vendidos</string>
 </resources>

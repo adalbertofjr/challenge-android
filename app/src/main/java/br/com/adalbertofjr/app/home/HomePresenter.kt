@@ -1,6 +1,7 @@
 package br.com.adalbertofjr.app.home
 
 import br.com.adalbertofjr.app.model.Banner
+import br.com.adalbertofjr.app.model.Categoria
 import br.com.adalbertofjr.app.repository.Repository
 import io.reactivex.rxkotlin.subscribeBy
 import timber.log.Timber
@@ -30,8 +31,19 @@ class HomePresenter(
 
     override fun loadCategoriasData() {
         view.let {
-            val categorias = repository.getCategorias()
-            view.showCategorias(categorias)
+            val categorias = mutableListOf<Categoria>()
+            repository.getCategorias()
+                    .subscribeBy(
+                            onNext = { categoria ->
+                                categorias.add(categoria)
+                            },
+                            onError = { error ->
+                                Timber.e(error)
+                            },
+                            onComplete = {
+                                view.showCategorias(categorias)
+                            }
+                    )
         }
     }
 

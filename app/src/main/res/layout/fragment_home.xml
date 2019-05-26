@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@color/white_two"
     tools:context=".home.HomeFragment">
 
     <br.com.adalbertofjr.app.componentes.carousel.CarouselView
@@ -14,5 +14,75 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txvCategoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/titulo_categorias"
+        android:textColor="@color/greyish_brown"
+        android:textSize="18sp"
+        app:fontFamily="sans-serif-medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carousel" />
+
+    <View
+        android:id="@+id/vwHeaderCategoria"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/greyish"
+        app:layout_constraintTop_toBottomOf="@+id/txvCategoria" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCategorias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vwHeaderCategoria" />
+
+    <View
+        android:id="@+id/vwFootCategoria"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/greyish"
+        app:layout_constraintTop_toBottomOf="@+id/rvCategorias" />
+
+    <TextView
+        android:id="@+id/txvMaisVendidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/titulo_mais_vendidos"
+        android:textColor="@color/greyish_brown"
+        android:textSize="18sp"
+        app:fontFamily="sans-serif-medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vwFootCategoria" />
+
+    <View
+        android:id="@+id/vwHeaderMaisVendidos"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/greyish"
+        app:layout_constraintTop_toBottomOf="@+id/txvMaisVendidos" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMaisVendidos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vwHeaderMaisVendidos" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

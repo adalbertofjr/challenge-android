@@ -10,7 +10,7 @@ import java.math.RoundingMode
 open class Repository : RepositoryContract {
 
     override fun getBannerItems(): Observable<Banner> {
-        val banners = mutableListOf(
+        val banners = listOf(
                 Banner(1,
                         "https://images-submarino.b2w.io/spacey/2017/02/06/MainTop_GAMES_FEV17.png",
                         "https://images-submarino.b2w.io/spacey/2017/02/06/MainTop_GAMES_FEV17.png"),
@@ -25,8 +25,8 @@ open class Repository : RepositoryContract {
         return Observable.fromIterable(banners)
     }
 
-    override fun getCategorias(): List<Categoria> {
-        return listOf(
+    override fun getCategorias(): Observable<Categoria> {
+        val categorias = listOf(
                 Categoria(1,
                         "Games",
                         "http://39ahd9aq5l9101brf3b8dq58.wpengine.netdna-cdn.com/wp-content/uploads/2013/06/3D-Gaming.png"
@@ -48,6 +48,7 @@ open class Repository : RepositoryContract {
                         "http://classificados.folharegiao.com.br/files/classificados_categoria/photo/8/sm_4d5ed3beb0f31b61cb9a01e46ecd0cf9.png"
                 )
         )
+        return Observable.fromIterable(categorias)
     }
 
     override fun getMaisVendido(): List<Produto> {
