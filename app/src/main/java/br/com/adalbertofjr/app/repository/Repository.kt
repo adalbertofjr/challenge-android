@@ -3,12 +3,14 @@ package br.com.adalbertofjr.app.repository
 import br.com.adalbertofjr.app.model.Banner
 import br.com.adalbertofjr.app.model.Categoria
 import br.com.adalbertofjr.app.model.Produto
+import io.reactivex.Observable
 import java.math.BigDecimal
 import java.math.RoundingMode
 
 open class Repository : RepositoryContract {
-    override fun getBannerItems(): List<Banner> {
-        return listOf(
+
+    override fun getBannerItems(): Observable<Banner> {
+        val banners = mutableListOf(
                 Banner(1,
                         "https://images-submarino.b2w.io/spacey/2017/02/06/MainTop_GAMES_FEV17.png",
                         "https://images-submarino.b2w.io/spacey/2017/02/06/MainTop_GAMES_FEV17.png"),
@@ -18,6 +20,10 @@ open class Repository : RepositoryContract {
                 Banner(3,
                         "https://images-submarino.b2w.io/spacey/2017/02/03/sub-home-dest-full-655x328-touch-play.png",
                         "https://images-submarino.b2w.io/spacey/2017/02/03/sub-home-dest-full-655x328-touch-play.png"))
+
+        Thread.sleep(5_000) // todo - remover simulação de espera
+
+        return Observable.fromIterable(banners)
     }
 
     override fun getCategorias(): List<Categoria> {

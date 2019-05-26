@@ -1,6 +1,9 @@
 package br.com.adalbertofjr.app.home
 
+import br.com.adalbertofjr.app.model.Banner
 import br.com.adalbertofjr.app.repository.Repository
+import io.reactivex.rxkotlin.subscribeBy
+import timber.log.Timber
 
 class HomePresenter(
         private val view: HomeContract.View,
@@ -9,8 +12,19 @@ class HomePresenter(
 
     override fun loadBannersData() {
         view.let {
-            val bannerItems = repository.getBannerItems()
-            view.showBanners(bannerItems)
+            val bannerItens = mutableListOf<Banner>()
+            repository.getBannerItems()
+                    .subscribeBy(
+                            onNext = { banner ->
+                                bannerItens.add(banner)
+                            },
+                            onError = { error ->
+                                Timber.e(error)
+                            },
+                            onComplete = {
+                                view.showBanners(bannerItens)
+                            }
+                    )
         }
     }
 

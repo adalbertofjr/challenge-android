@@ -10,6 +10,7 @@ import br.com.adalbertofjr.app.model.Banner
 import br.com.adalbertofjr.app.model.Categoria
 import br.com.adalbertofjr.app.model.Produto
 import br.com.adalbertofjr.app.repository.Repository
+import kotlinx.android.synthetic.main.fragment_home.*
 import timber.log.Timber
 
 class HomeFragment : Fragment(), HomeContract.View {
@@ -40,6 +41,7 @@ class HomeFragment : Fragment(), HomeContract.View {
     override fun showBanners(banners: List<Banner>) {
         banners.let {
             Timber.d("Banners id: ($banners)")
+            txtDescricao.text = banners.toString()
         }
     }
 
