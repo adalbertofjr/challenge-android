@@ -20,4 +20,11 @@ class HomePresenter(
             view.showCategorias(categorias)
         }
     }
+
+    override fun loadMaisVendidos() {
+        view.let {
+            val vendidos = repository.getMaisVendido()
+            view.showMaisVendidos(vendidos)
+        }
+    }
 }

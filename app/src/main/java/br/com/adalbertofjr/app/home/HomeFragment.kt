@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import br.com.adalbertofjr.app.R
 import br.com.adalbertofjr.app.model.Banner
 import br.com.adalbertofjr.app.model.Categoria
+import br.com.adalbertofjr.app.model.Produto
 import br.com.adalbertofjr.app.repository.Repository
 import timber.log.Timber
 
@@ -33,6 +34,7 @@ class HomeFragment : Fragment(), HomeContract.View {
         super.onViewCreated(view, savedInstanceState)
         presenter.loadBannersData()
         presenter.loadCategoriasData()
+        presenter.loadMaisVendidos()
     }
 
     override fun showBanners(banners: List<Banner>) {
@@ -44,6 +46,12 @@ class HomeFragment : Fragment(), HomeContract.View {
     override fun showCategorias(categorias: List<Categoria>) {
         categorias.let {
             Timber.d("Categoria descrição: ($categorias)")
+        }
+    }
+
+    override fun showMaisVendidos(vendidos: List<Produto>) {
+        vendidos.let {
+            Timber.d("Mais vendidos: ($vendidos)")
         }
     }
 
