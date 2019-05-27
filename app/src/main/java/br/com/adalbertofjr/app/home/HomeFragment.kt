@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import br.com.adalbertofjr.app.R
 import br.com.adalbertofjr.app.componentes.carousel.adapter.CarouselViewPagerAdapter
 import br.com.adalbertofjr.app.home.adapter.CategoriasAdapter
+import br.com.adalbertofjr.app.home.adapter.ProdutosAdapter
 import br.com.adalbertofjr.app.model.Banner
 import br.com.adalbertofjr.app.model.Categoria
 import br.com.adalbertofjr.app.model.Produto
@@ -53,15 +55,18 @@ class HomeFragment : Fragment(), HomeContract.View {
     override fun showCategorias(categorias: List<Categoria>) {
         categorias.let {
             Timber.d("Categoria descrição: ($categorias)")
-//            rvCategorias.setHasFixedSize(true)
-            rvCategorias.adapter = CategoriasAdapter(categorias)
-            rvCategorias.layoutManager = LinearLayoutManager(context, LinearLayout.HORIZONTAL, false)
+            rvCategorias.setHasFixedSize(true)
+            rvCategorias.adapter = CategoriasAdapter(context!!, categorias)
+            rvCategorias.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         }
     }
 
-    override fun showMaisVendidos(vendidos: List<Produto>) {
-        vendidos.let {
-            Timber.d("Mais vendidos: ($vendidos)")
+    override fun showMaisVendidos(produtos: List<Produto>) {
+        produtos.let {
+            Timber.d("Mais vendidos: ($produtos)")
+            rvMaisVendidos.setHasFixedSize(true)
+            rvMaisVendidos.adapter = ProdutosAdapter(produtos)
+            rvMaisVendidos.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         }
     }
 

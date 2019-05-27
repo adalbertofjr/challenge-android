@@ -8,5 +8,5 @@ import io.reactivex.Observable
 interface RepositoryContract {
     fun getBannerItems(): Observable<Banner>
     fun getCategorias(): Observable<Categoria>
-    fun getMaisVendido(): List<Produto>
+    fun getMaisVendido(): Observable<Produto>
 }

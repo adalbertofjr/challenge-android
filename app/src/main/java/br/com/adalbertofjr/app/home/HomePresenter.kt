@@ -2,6 +2,7 @@ package br.com.adalbertofjr.app.home
 
 import br.com.adalbertofjr.app.model.Banner
 import br.com.adalbertofjr.app.model.Categoria
+import br.com.adalbertofjr.app.model.Produto
 import br.com.adalbertofjr.app.repository.Repository
 import io.reactivex.rxkotlin.subscribeBy
 import timber.log.Timber
@@ -49,8 +50,19 @@ class HomePresenter(
 
     override fun loadMaisVendidos() {
         view.let {
-            val vendidos = repository.getMaisVendido()
-            view.showMaisVendidos(vendidos)
+            val produtos = mutableListOf<Produto>()
+            repository.getMaisVendido()
+                    .subscribeBy(
+                            onNext = { produto ->
+                                produtos.add(produto)
+                            },
+                            onError = { error ->
+                                Timber.e(error)
+                            },
+                            onComplete = {
+                                view.showMaisVendidos(produtos)
+                            }
+                    )
         }
     }
 }

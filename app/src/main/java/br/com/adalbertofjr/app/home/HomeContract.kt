@@ -9,7 +9,7 @@ interface HomeContract {
     interface View {
         fun showBanners(banners: List<Banner>)
         fun showCategorias(categorias: List<Categoria>)
-        fun showMaisVendidos(vendidos: List<Produto>)
+        fun showMaisVendidos(produtos: List<Produto>)
     }
 
     interface Presenter {

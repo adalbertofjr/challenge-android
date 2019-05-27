@@ -51,8 +51,8 @@ open class Repository : RepositoryContract {
         return Observable.fromIterable(categorias)
     }
 
-    override fun getMaisVendido(): List<Produto> {
-        return listOf(
+    override fun getMaisVendido(): Observable<Produto> {
+        val maisVendidos = listOf(
                 Produto(1,
                         "Fifa 1",
                         "https://images-submarino.b2w.io/produtos/01/00/item/128926/4/128926443_1GG.png",
@@ -164,5 +164,6 @@ open class Repository : RepositoryContract {
                                 "http://39ahd9aq5l9101brf3b8dq58.wpengine.netdna-cdn.com/wp-content/uploads/2013/06/3D-Gaming.png")
                 )
         )
+        return Observable.fromIterable(maisVendidos)
     }
 }

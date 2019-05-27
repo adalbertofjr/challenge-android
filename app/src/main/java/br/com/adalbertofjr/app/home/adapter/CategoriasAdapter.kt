@@ -1,5 +1,6 @@
 package br.com.adalbertofjr.app.home.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +13,7 @@ import br.com.adalbertofjr.app.util.load
 import kotlinx.android.synthetic.main.categoria_item.view.*
 import timber.log.Timber
 
-class CategoriasAdapter(val categorias: List<Categoria>) : RecyclerView.Adapter<CategoriasAdapter.ViewHolder>() {
+class CategoriasAdapter(var context: Context, var categorias: List<Categoria>) : RecyclerView.Adapter<CategoriasAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.categoria_item, parent, false)
         return ViewHolder(view)

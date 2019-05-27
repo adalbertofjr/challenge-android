@@ -8,5 +8,6 @@ fun ImageView.load(path: String) {
     Picasso.get().load(path)
             .placeholder(R.drawable.ic_launcher_foreground)
             .fit()
+            .centerInside()
             .into(this)
 }

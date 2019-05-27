@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.viewpager.widget.PagerAdapter
 import br.com.adalbertofjr.app.R
 import br.com.adalbertofjr.app.model.Banner
-import br.com.adalbertofjr.app.util.load
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.carousel_item.view.*
 
 
@@ -16,7 +16,10 @@ class CarouselViewPagerAdapter(val context: Context, val items: List<Banner>) : 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val banner = items.get(position)
         val layout = LayoutInflater.from(context).inflate(R.layout.carousel_item, container, false)
-        layout.image.load(banner.urlImagem)
+        Picasso.get().load(banner.urlImagem)
+                .placeholder(R.drawable.ic_launcher_foreground)
+                .fit()
+                .into(layout.image)
         container.addView(layout)
         return layout
     }
