@@ -12,6 +12,7 @@ interface HomeContract {
         fun showMaisVendidos(produtos: List<Produto>)
         fun onProdutoItemClick(produto: Produto)
         fun onCategoriaItemClick(categoria: Categoria)
+        fun onBannerItemClick(banner: Banner)
     }
 
     interface Presenter {

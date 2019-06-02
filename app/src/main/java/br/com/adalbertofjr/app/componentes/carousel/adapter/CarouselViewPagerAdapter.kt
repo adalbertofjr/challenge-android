@@ -1,6 +1,5 @@
 package br.com.adalbertofjr.app.componentes.carousel.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,16 +10,22 @@ import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.carousel_item.view.*
 
 
-class CarouselViewPagerAdapter(val context: Context, val items: List<Banner>) : PagerAdapter() {
+class CarouselViewPagerAdapter(val items: List<Banner>, private val callback: (Banner) -> Unit) : PagerAdapter() {
 
-    override fun instantiateItem(container: ViewGroup, position: Int): Any {
+    override fun instantiateItem(parent: ViewGroup, position: Int): Any {
         val banner = items.get(position)
-        val layout = LayoutInflater.from(context).inflate(R.layout.carousel_item, container, false)
+        val layout = LayoutInflater.from(parent.context)
+                .inflate(R.layout.carousel_item, parent, false)
         Picasso.get().load(banner.urlImagem)
                 .placeholder(R.drawable.ic_launcher_foreground)
                 .fit()
                 .into(layout.image)
-        container.addView(layout)
+
+        layout.setOnClickListener {
+            callback(banner)
+        }
+
+        parent.addView(layout)
         return layout
     }
 
@@ -36,6 +41,4 @@ class CarouselViewPagerAdapter(val context: Context, val items: List<Banner>) : 
         val view = obj as View
         container.removeView(view)
     }
-
-
 }

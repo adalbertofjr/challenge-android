@@ -2,7 +2,6 @@ package br.com.adalbertofjr.app.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -49,7 +48,7 @@ class HomeFragment : Fragment(), HomeContract.View {
     override fun showBanners(banners: List<Banner>) {
         banners.let {
             Timber.d("Banners id: ($banners)")
-            carousel.adapter = CarouselViewPagerAdapter(context!!, banners)
+            carousel.adapter = CarouselViewPagerAdapter(banners, this::onBannerItemClick)
         }
     }
 
@@ -80,6 +79,10 @@ class HomeFragment : Fragment(), HomeContract.View {
 
     override fun onCategoriaItemClick(categoria: Categoria) {
         Toast.makeText(context, categoria.descricao, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onBannerItemClick(banner: Banner) {
+        Toast.makeText(context, banner.linkUrl, Toast.LENGTH_SHORT).show()
     }
 
     companion object {
