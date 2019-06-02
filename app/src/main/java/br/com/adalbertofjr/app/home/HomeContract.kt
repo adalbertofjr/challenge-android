@@ -11,6 +11,7 @@ interface HomeContract {
         fun showCategorias(categorias: List<Categoria>)
         fun showMaisVendidos(produtos: List<Produto>)
         fun onProdutoItemClick(produto: Produto)
+        fun onCategoriaItemClick(categoria: Categoria)
     }
 
     interface Presenter {

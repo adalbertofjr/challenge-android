@@ -13,10 +13,21 @@ import br.com.adalbertofjr.app.util.load
 import kotlinx.android.synthetic.main.categoria_item.view.*
 import timber.log.Timber
 
-class CategoriasAdapter(var context: Context, var categorias: List<Categoria>) : RecyclerView.Adapter<CategoriasAdapter.ViewHolder>() {
+class CategoriasAdapter(var categorias: List<Categoria>,
+                        private val callback: (Categoria) -> Unit
+) :
+        RecyclerView.Adapter<CategoriasAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.categoria_item, parent, false)
-        return ViewHolder(view)
+        val view =
+                LayoutInflater.from(parent.context)
+                        .inflate(R.layout.categoria_item, parent, false)
+        val viewHolder = ViewHolder(view)
+        viewHolder.itemView.setOnClickListener {
+            val categoria = categorias.get(viewHolder.adapterPosition)
+            callback(categoria)
+        }
+
+        return viewHolder
     }
 
     override fun getItemCount(): Int {

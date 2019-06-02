@@ -11,9 +11,14 @@ import br.com.adalbertofjr.app.model.Produto
 import br.com.adalbertofjr.app.util.load
 import kotlinx.android.synthetic.main.produtos_item.view.*
 
-class ProdutosAdapter(var produtos: List<Produto>, private val callback: (Produto) -> Unit) : RecyclerView.Adapter<ProdutosAdapter.ViewHolder>() {
+class ProdutosAdapter(var produtos: List<Produto>,
+                      private val callback: (Produto) -> Unit
+) : RecyclerView.Adapter<ProdutosAdapter.ViewHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.produtos_item, parent, false)
+        val view =
+                LayoutInflater.from(parent.context)
+                        .inflate(R.layout.produtos_item, parent, false)
         val viewHolder = ViewHolder(view)
 
         viewHolder.itemView.setOnClickListener {

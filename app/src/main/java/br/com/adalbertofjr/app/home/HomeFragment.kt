@@ -2,6 +2,7 @@ package br.com.adalbertofjr.app.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -56,8 +57,9 @@ class HomeFragment : Fragment(), HomeContract.View {
         categorias.let {
             Timber.d("Categoria descrição: ($categorias)")
             rvCategorias.setHasFixedSize(true)
-            rvCategorias.adapter = CategoriasAdapter(context!!, categorias)
-            rvCategorias.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
+            rvCategorias.adapter = CategoriasAdapter(categorias, this::onCategoriaItemClick)
+            rvCategorias.layoutManager =
+                    LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         }
     }
 
@@ -66,15 +68,18 @@ class HomeFragment : Fragment(), HomeContract.View {
             Timber.d("Mais vendidos: ($produtos)")
             rvMaisVendidos.setHasFixedSize(true)
             rvMaisVendidos.adapter = ProdutosAdapter(produtos, this::onProdutoItemClick)
-            rvMaisVendidos.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-//            rvMaisVendidos.setOnTouchListener { v, event ->
-//                true // disable scroll
-//            }
+            rvMaisVendidos.layoutManager =
+                    LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+            rvMaisVendidos.isNestedScrollingEnabled = false
         }
     }
 
     override fun onProdutoItemClick(produto: Produto) {
         Toast.makeText(context, produto.nome, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onCategoriaItemClick(categoria: Categoria) {
+        Toast.makeText(context, categoria.descricao, Toast.LENGTH_SHORT).show()
     }
 
     companion object {
