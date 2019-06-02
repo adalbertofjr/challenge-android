@@ -1,5 +1,7 @@
 package br.com.adalbertofjr.app.home
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,6 +25,7 @@ class HomeFragment : Fragment(), HomeContract.View {
 
     lateinit var presenter: HomePresenter
     private val repository: Repository by lazy { Repository() }
+    private val URL_WEB_PAGE = "https://www.submarino.com.br/"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,7 +85,18 @@ class HomeFragment : Fragment(), HomeContract.View {
     }
 
     override fun onBannerItemClick(banner: Banner) {
-        Toast.makeText(context, banner.linkUrl, Toast.LENGTH_SHORT).show()
+        presenter.openWebPage(URL_WEB_PAGE)
+    }
+
+    override fun showWebPage(url: String) {
+        url.let {
+            val webPage = Uri.parse(url)
+            Intent(Intent.ACTION_VIEW, webPage).apply {
+                if (resolveActivity(context!!.packageManager) != null) {
+                    startActivity(this)
+                }
+            }
+        }
     }
 
     companion object {

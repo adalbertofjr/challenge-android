@@ -13,11 +13,13 @@ interface HomeContract {
         fun onProdutoItemClick(produto: Produto)
         fun onCategoriaItemClick(categoria: Categoria)
         fun onBannerItemClick(banner: Banner)
+        fun showWebPage(url: String)
     }
 
     interface Presenter {
         fun loadBannersData()
         fun loadCategoriasData()
         fun loadMaisVendidos()
+        fun openWebPage(url: String)
     }
 }

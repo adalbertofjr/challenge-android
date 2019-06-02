@@ -65,4 +65,10 @@ class HomePresenter(
                     )
         }
     }
+
+    override fun openWebPage(url: String) {
+        view.let {
+            view.showWebPage(url)
+        }
+    }
 }
