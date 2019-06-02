@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -65,9 +65,16 @@ class HomeFragment : Fragment(), HomeContract.View {
         produtos.let {
             Timber.d("Mais vendidos: ($produtos)")
             rvMaisVendidos.setHasFixedSize(true)
-            rvMaisVendidos.adapter = ProdutosAdapter(produtos)
+            rvMaisVendidos.adapter = ProdutosAdapter(produtos, this::onProdutoItemClick)
             rvMaisVendidos.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+//            rvMaisVendidos.setOnTouchListener { v, event ->
+//                true // disable scroll
+//            }
         }
+    }
+
+    override fun onProdutoItemClick(produto: Produto) {
+        Toast.makeText(context, produto.nome, Toast.LENGTH_SHORT).show()
     }
 
     companion object {
