@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.adalbertofjr.app.R
 import br.com.adalbertofjr.app.componentes.carousel.adapter.CarouselViewPagerAdapter
+import br.com.adalbertofjr.app.detalhe.ProdutoDetalheActivity
 import br.com.adalbertofjr.app.home.adapter.CategoriasAdapter
 import br.com.adalbertofjr.app.home.adapter.ProdutosAdapter
 import br.com.adalbertofjr.app.model.Banner
@@ -77,7 +78,7 @@ class HomeFragment : Fragment(), HomeContract.View {
     }
 
     override fun onProdutoItemClick(produto: Produto) {
-        Toast.makeText(context, produto.nome, Toast.LENGTH_SHORT).show()
+        presenter.loadProdutoDetalhe(produto)
     }
 
     override fun onCategoriaItemClick(categoria: Categoria) {
@@ -97,6 +98,10 @@ class HomeFragment : Fragment(), HomeContract.View {
                 }
             }
         }
+    }
+
+    override fun showProdutoDetalhe(produto: Produto) {
+        ProdutoDetalheActivity.open(activity!!, produto)
     }
 
     companion object {

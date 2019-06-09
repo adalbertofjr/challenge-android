@@ -4,8 +4,6 @@ import br.com.adalbertofjr.app.model.Banner
 import br.com.adalbertofjr.app.model.Categoria
 import br.com.adalbertofjr.app.model.Produto
 import io.reactivex.Observable
-import java.math.BigDecimal
-import java.math.RoundingMode
 
 open class Repository : RepositoryContract {
 
@@ -57,8 +55,8 @@ open class Repository : RepositoryContract {
                         "Fifa 1",
                         "https://images-submarino.b2w.io/produtos/01/00/item/128926/4/128926443_1GG.png",
                         "Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Diuretics paradis num copo é motivis de denguis.<br/><br/>Copo furadis é disculpa de bebadis, arcu quam euismod magna. Casamentiss faiz malandris se pirulitá. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. in elementis mé pra quem é amistosis quis leo.<br/><br/>A ordem dos tratores não altera o pão duris Delegadis gente finis, bibendum egestas augue arcu ut est. Mé faiz elementum girarzis, nisi eros vermeio. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!",
-                        BigDecimal(299).setScale(2, RoundingMode.HALF_EVEN),
-                        BigDecimal(119.9899999999999948840923025272786617279052734375).setScale(2, RoundingMode.HALF_EVEN),
+                        299.0,
+                        119.9899999999999948840923025272786617279052734375,
                         Categoria(1,
                                 "Games",
                                 "http://39ahd9aq5l9101brf3b8dq58.wpengine.netdna-cdn.com/wp-content/uploads/2013/06/3D-Gaming.png")
@@ -67,8 +65,8 @@ open class Repository : RepositoryContract {
                         "Fifa 2",
                         "https://images-submarino.b2w.io/produtos/01/00/item/128926/4/128926443_1GG.png",
                         "Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Diuretics paradis num copo é motivis de denguis.<br/><br/>Copo furadis é disculpa de bebadis, arcu quam euismod magna. Casamentiss faiz malandris se pirulitá. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. in elementis mé pra quem é amistosis quis leo.<br/><br/>A ordem dos tratores não altera o pão duris Delegadis gente finis, bibendum egestas augue arcu ut est. Mé faiz elementum girarzis, nisi eros vermeio. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!",
-                        BigDecimal(299).setScale(2, RoundingMode.HALF_EVEN),
-                        BigDecimal(119.9899999999999948840923025272786617279052734375).setScale(2, RoundingMode.HALF_EVEN),
+                        299.0,
+                        119.9899999999999948840923025272786617279052734375,
                         Categoria(1,
                                 "Games",
                                 "http://39ahd9aq5l9101brf3b8dq58.wpengine.netdna-cdn.com/wp-content/uploads/2013/06/3D-Gaming.png")
@@ -77,8 +75,8 @@ open class Repository : RepositoryContract {
                         "Fifa 3",
                         "https://images-submarino.b2w.io/produtos/01/00/item/128926/4/128926443_1GG.png",
                         "Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Diuretics paradis num copo é motivis de denguis.<br/><br/>Copo furadis é disculpa de bebadis, arcu quam euismod magna. Casamentiss faiz malandris se pirulitá. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. in elementis mé pra quem é amistosis quis leo.<br/><br/>A ordem dos tratores não altera o pão duris Delegadis gente finis, bibendum egestas augue arcu ut est. Mé faiz elementum girarzis, nisi eros vermeio. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!",
-                        BigDecimal(299).setScale(2, RoundingMode.HALF_EVEN),
-                        BigDecimal(119.9899999999999948840923025272786617279052734375).setScale(2, RoundingMode.HALF_EVEN),
+                        299.0,
+                        119.9899999999999948840923025272786617279052734375,
                         Categoria(1,
                                 "Games",
                                 "http://39ahd9aq5l9101brf3b8dq58.wpengine.netdna-cdn.com/wp-content/uploads/2013/06/3D-Gaming.png")
@@ -87,8 +85,8 @@ open class Repository : RepositoryContract {
                         "Fifa 4",
                         "https://images-submarino.b2w.io/produtos/01/00/item/128926/4/128926443_1GG.png",
                         "Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Diuretics paradis num copo é motivis de denguis.<br/><br/>Copo furadis é disculpa de bebadis, arcu quam euismod magna. Casamentiss faiz malandris se pirulitá. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. in elementis mé pra quem é amistosis quis leo.<br/><br/>A ordem dos tratores não altera o pão duris Delegadis gente finis, bibendum egestas augue arcu ut est. Mé faiz elementum girarzis, nisi eros vermeio. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!",
-                        BigDecimal(299).setScale(2, RoundingMode.HALF_EVEN),
-                        BigDecimal(119.9899999999999948840923025272786617279052734375).setScale(2, RoundingMode.HALF_EVEN),
+                        299.0,
+                        119.9899999999999948840923025272786617279052734375,
                         Categoria(1,
                                 "Games",
                                 "http://39ahd9aq5l9101brf3b8dq58.wpengine.netdna-cdn.com/wp-content/uploads/2013/06/3D-Gaming.png")
@@ -97,8 +95,8 @@ open class Repository : RepositoryContract {
                         "Fifa 5",
                         "https://images-submarino.b2w.io/produtos/01/00/item/128926/4/128926443_1GG.png",
                         "Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Diuretics paradis num copo é motivis de denguis.<br/><br/>Copo furadis é disculpa de bebadis, arcu quam euismod magna. Casamentiss faiz malandris se pirulitá. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. in elementis mé pra quem é amistosis quis leo.<br/><br/>A ordem dos tratores não altera o pão duris Delegadis gente finis, bibendum egestas augue arcu ut est. Mé faiz elementum girarzis, nisi eros vermeio. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!",
-                        BigDecimal(299).setScale(2, RoundingMode.HALF_EVEN),
-                        BigDecimal(119.9899999999999948840923025272786617279052734375).setScale(2, RoundingMode.HALF_EVEN),
+                        299.0,
+                        119.9899999999999948840923025272786617279052734375,
                         Categoria(1,
                                 "Games",
                                 "http://39ahd9aq5l9101brf3b8dq58.wpengine.netdna-cdn.com/wp-content/uploads/2013/06/3D-Gaming.png")
@@ -107,8 +105,8 @@ open class Repository : RepositoryContract {
                         "Fifa 6",
                         "https://images-submarino.b2w.io/produtos/01/00/item/128926/4/128926443_1GG.png",
                         "Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Diuretics paradis num copo é motivis de denguis.<br/><br/>Copo furadis é disculpa de bebadis, arcu quam euismod magna. Casamentiss faiz malandris se pirulitá. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. in elementis mé pra quem é amistosis quis leo.<br/><br/>A ordem dos tratores não altera o pão duris Delegadis gente finis, bibendum egestas augue arcu ut est. Mé faiz elementum girarzis, nisi eros vermeio. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!",
-                        BigDecimal(299).setScale(2, RoundingMode.HALF_EVEN),
-                        BigDecimal(119.9899999999999948840923025272786617279052734375).setScale(2, RoundingMode.HALF_EVEN),
+                        299.0,
+                        119.9899999999999948840923025272786617279052734375,
                         Categoria(1,
                                 "Games",
                                 "http://39ahd9aq5l9101brf3b8dq58.wpengine.netdna-cdn.com/wp-content/uploads/2013/06/3D-Gaming.png")
@@ -117,8 +115,8 @@ open class Repository : RepositoryContract {
                         "Fifa 7",
                         "https://images-submarino.b2w.io/produtos/01/00/item/128926/4/128926443_1GG.png",
                         "Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Diuretics paradis num copo é motivis de denguis.<br/><br/>Copo furadis é disculpa de bebadis, arcu quam euismod magna. Casamentiss faiz malandris se pirulitá. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. in elementis mé pra quem é amistosis quis leo.<br/><br/>A ordem dos tratores não altera o pão duris Delegadis gente finis, bibendum egestas augue arcu ut est. Mé faiz elementum girarzis, nisi eros vermeio. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!",
-                        BigDecimal(299).setScale(2, RoundingMode.HALF_EVEN),
-                        BigDecimal(119.9899999999999948840923025272786617279052734375).setScale(2, RoundingMode.HALF_EVEN),
+                        299.0,
+                        119.9899999999999948840923025272786617279052734375,
                         Categoria(1,
                                 "Games",
                                 "http://39ahd9aq5l9101brf3b8dq58.wpengine.netdna-cdn.com/wp-content/uploads/2013/06/3D-Gaming.png")
@@ -127,8 +125,8 @@ open class Repository : RepositoryContract {
                         "Fifa 8",
                         "https://images-submarino.b2w.io/produtos/01/00/item/128926/4/128926443_1GG.png",
                         "Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Diuretics paradis num copo é motivis de denguis.<br/><br/>Copo furadis é disculpa de bebadis, arcu quam euismod magna. Casamentiss faiz malandris se pirulitá. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. in elementis mé pra quem é amistosis quis leo.<br/><br/>A ordem dos tratores não altera o pão duris Delegadis gente finis, bibendum egestas augue arcu ut est. Mé faiz elementum girarzis, nisi eros vermeio. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!",
-                        BigDecimal(299).setScale(2, RoundingMode.HALF_EVEN),
-                        BigDecimal(119.9899999999999948840923025272786617279052734375).setScale(2, RoundingMode.HALF_EVEN),
+                        299.0,
+                        119.9899999999999948840923025272786617279052734375,
                         Categoria(1,
                                 "Games",
                                 "http://39ahd9aq5l9101brf3b8dq58.wpengine.netdna-cdn.com/wp-content/uploads/2013/06/3D-Gaming.png")
@@ -137,8 +135,8 @@ open class Repository : RepositoryContract {
                         "Fifa 9",
                         "https://images-submarino.b2w.io/produtos/01/00/item/128926/4/128926443_1GG.png",
                         "Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Diuretics paradis num copo é motivis de denguis.<br/><br/>Copo furadis é disculpa de bebadis, arcu quam euismod magna. Casamentiss faiz malandris se pirulitá. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. in elementis mé pra quem é amistosis quis leo.<br/><br/>A ordem dos tratores não altera o pão duris Delegadis gente finis, bibendum egestas augue arcu ut est. Mé faiz elementum girarzis, nisi eros vermeio. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!",
-                        BigDecimal(299).setScale(2, RoundingMode.HALF_EVEN),
-                        BigDecimal(119.9899999999999948840923025272786617279052734375).setScale(2, RoundingMode.HALF_EVEN),
+                        299.0,
+                        119.9899999999999948840923025272786617279052734375,
                         Categoria(1,
                                 "Games",
                                 "http://39ahd9aq5l9101brf3b8dq58.wpengine.netdna-cdn.com/wp-content/uploads/2013/06/3D-Gaming.png")
@@ -147,8 +145,8 @@ open class Repository : RepositoryContract {
                         "Fifa 10",
                         "https://images-submarino.b2w.io/produtos/01/00/item/128926/4/128926443_1GG.png",
                         "Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Diuretics paradis num copo é motivis de denguis.<br/><br/>Copo furadis é disculpa de bebadis, arcu quam euismod magna. Casamentiss faiz malandris se pirulitá. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. in elementis mé pra quem é amistosis quis leo.<br/><br/>A ordem dos tratores não altera o pão duris Delegadis gente finis, bibendum egestas augue arcu ut est. Mé faiz elementum girarzis, nisi eros vermeio. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!",
-                        BigDecimal(299).setScale(2, RoundingMode.HALF_EVEN),
-                        BigDecimal(119.9899999999999948840923025272786617279052734375).setScale(2, RoundingMode.HALF_EVEN),
+                        299.0,
+                        119.9899999999999948840923025272786617279052734375,
                         Categoria(1,
                                 "Games",
                                 "http://39ahd9aq5l9101brf3b8dq58.wpengine.netdna-cdn.com/wp-content/uploads/2013/06/3D-Gaming.png")
@@ -157,8 +155,8 @@ open class Repository : RepositoryContract {
                         "Fifa 11",
                         "https://images-submarino.b2w.io/produtos/01/00/item/128926/4/128926443_1GG.png",
                         "Mussum Ipsum, cacilds vidis litro abertis. Atirei o pau no gatis, per gatis num morreus. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Praesent malesuada urna nisi, quis volutpat erat hendrerit non. Nam vulputate dapibus. Diuretics paradis num copo é motivis de denguis.<br/><br/>Copo furadis é disculpa de bebadis, arcu quam euismod magna. Casamentiss faiz malandris se pirulitá. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. in elementis mé pra quem é amistosis quis leo.<br/><br/>A ordem dos tratores não altera o pão duris Delegadis gente finis, bibendum egestas augue arcu ut est. Mé faiz elementum girarzis, nisi eros vermeio. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!",
-                        BigDecimal(299).setScale(2, RoundingMode.HALF_EVEN),
-                        BigDecimal(119.9899999999999948840923025272786617279052734375).setScale(2, RoundingMode.HALF_EVEN),
+                        299.0,
+                        119.9899999999999948840923025272786617279052734375,
                         Categoria(1,
                                 "Games",
                                 "http://39ahd9aq5l9101brf3b8dq58.wpengine.netdna-cdn.com/wp-content/uploads/2013/06/3D-Gaming.png")

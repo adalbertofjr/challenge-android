@@ -71,4 +71,10 @@ class HomePresenter(
             view.showWebPage(url)
         }
     }
+
+    override fun loadProdutoDetalhe(produto: Produto) {
+        view.let {
+            view.showProdutoDetalhe(produto)
+        }
+    }
 }

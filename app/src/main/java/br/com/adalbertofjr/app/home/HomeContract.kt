@@ -14,6 +14,7 @@ interface HomeContract {
         fun onCategoriaItemClick(categoria: Categoria)
         fun onBannerItemClick(banner: Banner)
         fun showWebPage(url: String)
+        fun showProdutoDetalhe(produto: Produto)
     }
 
     interface Presenter {
@@ -21,5 +22,6 @@ interface HomeContract {
         fun loadCategoriasData()
         fun loadMaisVendidos()
         fun openWebPage(url: String)
+        fun loadProdutoDetalhe(produto: Produto)
     }
 }
